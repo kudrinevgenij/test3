@@ -29,6 +29,13 @@
             <input type="radio" name="gender" value="${gender}">${gender}<br>
     </c:forEach>
     <input type="submit" value="Отправить">
+
+    <c:if test="${not empty requestScope.errors}">
+        <c:forEach var="error" items="${requestScope.errors}">
+            <span>${error.message}</span>
+            <br>
+        </c:forEach>
+    </c:if>
 </form>
 </body>
 </html>
